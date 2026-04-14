@@ -37,7 +37,7 @@ body {
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  background: url(../images/background.jpg) no-repeat left top / 100% 1920px;
+  // background: url(../images/background.jpg) no-repeat left top / 100% 1920px;
 
   /* header */
   header {
@@ -78,7 +78,19 @@ body {
   div#content {
     position: relative;
     height: calc(100% - 226px);
-
+    background: #fff;
+    a.admin {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: transparent;
+      font-size: 0;
+      width: 140px;
+      height: 140px;
+      cursor: pointer;
+      z-index: 999999999;
+    }
     /* User */
     &.user {
       section.now-loading {
@@ -140,7 +152,7 @@ body {
           margin: 0 auto 40px;
           width: 360px;
           height: 260px;
-          background: url(../images/logo1.svg) no-repeat center / 100% auto;
+          // background: url(../images/logo1.svg) no-repeat center / 100% auto;
         }
 
         strong {
@@ -168,23 +180,39 @@ body {
 
       section.main-video {
         width: 100%;
-        height: 812px;
+        height: 100%;
 
         video {
+          // display: none;
           width: 100%;
-          height: 812px;
-          -webkit-border-radius: 1px;
-          object-fit: cover;
+          height: 100%;
+          &.fill{
+            object-fit: fill;
+          }
+          &.contain {
+            object-fit: contain;
+          }
+          &.cover {
+            object-fit: cover;
+          }
         }
 
         div.image {
+          display: none;
           width: 100%;
-          height: 812px;
-
+          height: 100%;
           img {
             width: 100%;
-            height: 812px;
-            object-fit: cover;
+            height: 100%;
+            &.fill{
+            object-fit: fill;
+            }
+            &.contain {
+              object-fit: contain;
+            }
+            &.cover {
+              object-fit: cover;
+            }
           }
         }
       }
@@ -224,7 +252,6 @@ body {
           z-index: 10000;
           left: 0;
           right: 0;
-          top: 226px;
           bottom: 0;
         }
       }

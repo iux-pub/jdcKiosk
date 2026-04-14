@@ -794,7 +794,6 @@ body {
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  background: url(../images/background.jpg) no-repeat left top/100% 1920px;
   /* header */
 }
 body header {
@@ -830,8 +829,22 @@ body header a.admin {
 body div#content {
   position: relative;
   height: calc(100% - 226px);
+  background: #fff;
+}
+body div#content a.admin {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  font-size: 0;
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+  z-index: 999999999;
+}
+body div#content {
   /* User */
-  /* admin */
 }
 body div#content.user section.now-loading {
   height: 812px;
@@ -886,7 +899,6 @@ body div#content.user section.welcome-message::before {
   margin: 0 auto 40px;
   width: 360px;
   height: 260px;
-  background: url(../images/logo1.svg) no-repeat center/100% auto;
 }
 body div#content.user section.welcome-message strong {
   display: block;
@@ -908,22 +920,42 @@ body div#content.user section.welcome-message.main::before {
 }
 body div#content.user section.main-video {
   width: 100%;
-  height: 812px;
+  height: 100%;
 }
 body div#content.user section.main-video video {
   width: 100%;
-  height: 812px;
-  -webkit-border-radius: 1px;
+  height: 100%;
+}
+body div#content.user section.main-video video.fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+body div#content.user section.main-video video.contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body div#content.user section.main-video video.cover {
   -o-object-fit: cover;
      object-fit: cover;
 }
 body div#content.user section.main-video div.image {
+  display: none;
   width: 100%;
-  height: 812px;
+  height: 100%;
 }
 body div#content.user section.main-video div.image img {
   width: 100%;
-  height: 812px;
+  height: 100%;
+}
+body div#content.user section.main-video div.image img.fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+body div#content.user section.main-video div.image img.contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body div#content.user section.main-video div.image img.cover {
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -959,7 +991,6 @@ body div#content.user section.intro-message a {
   z-index: 10000;
   left: 0;
   right: 0;
-  top: 226px;
   bottom: 0;
 }
 body div#content.user section.main-btn {
@@ -1521,6 +1552,9 @@ body div#content.user div.sub-box section.btn-set button span {
   font-size: 26px;
   color: rgba(255, 255, 255, 0.6);
 }
+body div#content {
+  /* admin */
+}
 body div#content.admin div.sub-box {
   display: inline-block;
   width: 100%;
@@ -2048,4 +2082,4 @@ body div#content nav button span {
   display: block;
   font-size: 26px;
   color: rgba(255, 255, 255, 0.6);
-}/*# sourceMappingURL=style.css.map */
+}
