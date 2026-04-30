@@ -788,12 +788,22 @@ body {
   width: 1080px;
   height: 100vh;
   overflow: hidden;
-  background: #fff;
 }
 
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
+}
+body.white {
+  background: #fff;
+}
+body.bg {
+  background: #000 url(../images/background.jpg) no-repeat left top/100% 1920px;
+}
+body.bg div#content {
+  background: transparent;
+}
+body {
   /* header */
 }
 body header {
